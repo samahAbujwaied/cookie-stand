@@ -6,6 +6,6 @@ img{
   margin-right: auto;
   border-radius: 20%;
 }
-div table , th{
+div table , th , td{
   border: 1px solid black;
 }
