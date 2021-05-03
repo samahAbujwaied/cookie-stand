@@ -1,0 +1,11 @@
+img{
+    display: block;
+  background-color:darkgoldenrod;
+  margin-left: auto;
+  margin-top: auto;
+  margin-right: auto;
+  border-radius: 20%;
+}
+div table , th{
+  border: 1px solid black;
+}
