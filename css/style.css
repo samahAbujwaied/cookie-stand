@@ -1,0 +1,14 @@
+img{
+    display: block;
+  background-color:darkgoldenrod;
+  margin-left: auto;
+  margin-top: auto;
+  margin-right: auto;
+  border-radius: 20%;
+}
+div{
+    background-color: rgb(237, 216, 100);
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 40%;
+}
