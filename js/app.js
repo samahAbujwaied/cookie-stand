@@ -12,6 +12,7 @@ function Sales(storename, min, max, avg) {
       this.total=0;
       this.avgRandom = [];
       salesarr.push(this);
+     
       
 }
 Sales.prototype.getHourWorks = function () {
@@ -55,7 +56,6 @@ Sales.prototype.render = function(){
    tdbody.textContent = this.storename;
 
    for (let j = 0; j < hourswork.length; j++) {
-      console.log("hello");
       let tbody = document.createElement('td');
       trbody.appendChild(tbody);
       tbody.textContent = this.avgRandom[j];
@@ -134,6 +134,34 @@ paris.render();
 lima.getHourWorks();
 lima.render();
 avgTotal();
+
+
+
+let newCity=document.getElementById('addNewCity');
+newCity.addEventListener('submit', addNewCity);
+function addNewCity(event){
+
+   event.preventDefault();
+   let storeName =event.target.storeName.value;
+   let minNum =  parseInt(event.target.minNum.value);
+   let maxNum = parseInt(event.target.maxNum.value);
+   let avgNum = parseInt( event.target.avgNum.value);
+   if (storeName=='' || minNum=='' || maxNum===''|| avgNum==='') {
+      console.log('sorry');   
+   } 
+   else{
+   let newCity= new Sales(storeName, minNum, maxNum, avgNum);
+   newCity.getHourWorks();
+   newCity.render();
+   
+   
+   }
+   avgTotal
+}
+  
+  
+
+
 
 
 
