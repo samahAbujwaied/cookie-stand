@@ -1,6 +1,6 @@
 img{
     display: block;
-  background-color:darkgoldenrod;
+  
   margin-left: auto;
   margin-top: auto;
   margin-right: auto;
@@ -9,3 +9,45 @@ img{
 div table , th , td{
   border: 1px solid black;
 }
+header ul li {
+  display: inline;
+  margin-left: 50px;;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 33px;
+  border-radius: 30%;
+  padding-left: 70px;
+}
+
+body{
+  background-color: skyblue
+} 
+main nav {
+  
+text-align: center;
+
+margin-top: 80px;
+background-color: black;
+font-size: 100px;
+color: black;
+}
+nav a:hover{
+  background-color: sienna;
+}
+div table {
+ 
+  margin-left: 350px;
+ margin-top: 50px;
+}
+div p{
+  text-align: center;
+}
+header p {
+  text-align: center;
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: chocolate;
+}
+
+
+
