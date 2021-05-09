@@ -73,15 +73,17 @@ Sales.prototype.render = function(){
 let avgTotal=function(){
     let avgtotal0 =0;
     let sumtotal=0;
+    let tfoot=document.createElement('tfoot');
+    table.appendChild(tfoot);
     let tr0=document.createElement('tr');
-    table.appendChild(tr0);
+    tfoot.appendChild(tr0);
     let td0=document.createElement('td');
-    table.appendChild(td0);
-   td0.textContent='Totals'
+    tr0.appendChild(td0);
+    td0.textContent='Totals'
    for (let index = 0; index < hourswork.length; index++) {
       avgtotal0=0;
       let td0=document.createElement('td');
-      table.appendChild(td0);
+      tr0.appendChild(td0);
       for (let g = 0; g < salesarr.length; g++) {
          let avvg= salesarr[g].avgRandom[index];
          avgtotal0+=avvg;
@@ -91,7 +93,7 @@ let avgTotal=function(){
     sumtotal+=avgtotal0;
    }
    let td1=document.createElement('td');
-   table.appendChild(td1);
+   tr0.appendChild(td1);
    summ();
    if(sumtotal==checksum[0]){
       td1.textContent=sumtotal;
