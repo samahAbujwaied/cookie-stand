@@ -46,8 +46,8 @@ let thead = document.createElement('th');
 trhead.appendChild(thead);
 thead.textContent = 'Dalily location total ';
 }
-Sales.prototype.render = function(){  
 
+Sales.prototype.render = function(){  
 
    let trbody = document.createElement('tr');
    table.appendChild(trbody);
@@ -86,11 +86,9 @@ let avgTotal=function(){
       tr0.appendChild(td0);
       for (let g = 0; g < salesarr.length; g++) {
          let avvg= salesarr[g].avgRandom[index];
-         avgtotal0+=avvg;
-         td0.textContent=avgtotal0;
-
-      }
-    sumtotal+=avgtotal0;
+         avgtotal0+=avvg;}
+     td0.textContent=avgtotal0;  
+     sumtotal+=avgtotal0;
    }
    let td1=document.createElement('td');
    tr0.appendChild(td1);
@@ -101,8 +99,6 @@ let avgTotal=function(){
    else 
    console.log('error');
 
-
- 
  let pel=document.createElement('p');
  container.appendChild(pel);
  pel.textContent='sum of totals is  '+sumtotal;
@@ -137,20 +133,31 @@ lima.getHourWorks();
 lima.render();
 avgTotal();
 
-
-
 let newCity=document.getElementById('addNewCity');
 newCity.addEventListener('submit', addNewCity);
 function addNewCity(event){
 
    event.preventDefault();
    let storeName =event.target.storeName.value;
-   let minNum =  parseInt(event.target.minNum.value);
+   let minNum = parseInt( event.target.minNum.value);
    let maxNum = parseInt(event.target.maxNum.value);
-   let avgNum = parseInt( event.target.avgNum.value);
-   if (storeName=='' || minNum=='' || maxNum===''|| avgNum==='') {
-      console.log('sorry');   
-   } 
+   let avgNum = parseInt(event.target.avgNum.value);
+   var x=document.forms["myForm"]["storeName"].value;
+   var regex=/^[a-zA-Z]+$/;
+   
+   if (document.myForm.storeName.value == "" || document.myForm.minNum.value=="" || document.myForm.maxNum.value=="" ||
+   document.myForm.avgNum.value==""  ) {
+      alert("There is some input is empty try again ");
+   }
+   else  if (minNum>=maxNum){
+      alert('please min number is larger than max number or you enter text try again')
+
+   } else if (!x.match(regex))
+   {
+       alert("Must Store name be string");
+       return false;
+   }
+   
    else{
    let newCity= new Sales(storeName, minNum, maxNum, avgNum);
    newCity.getHourWorks();
@@ -158,10 +165,12 @@ function addNewCity(event){
    
    
    }
-   avgTotal
+   
 }
+
   
   
+
 
 
 
