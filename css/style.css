@@ -8,15 +8,17 @@ img{
 }
 div table , th , td{
   border: 1px solid black;
+  font-family: Arial;
 }
 header ul li {
   display: inline;
   margin-left: 50px;;
   text-decoration: none;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 33px;
+  font-family: Arial;
+  font-size: 25px;
   border-radius: 30%;
   padding-left: 70px;
+
 }
 
 body{
@@ -29,6 +31,7 @@ text-align: center;
 margin-top: 80px;
 background-color: black;
 font-size: 100px;
+font-family: Georgia ، Times;
 color: black;
 }
 nav a:hover{
@@ -41,15 +44,17 @@ div table {
 }
 div p{
   text-align: center;
+  font-family: Georgia ، Times;
 }
 header p {
   text-align: center;
   font-size: 50px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Georgia ، Times;
   color: chocolate;
 }
 header h4{
   text-align: center;
+  font-family: Georgia ، Times;
 }
 
 

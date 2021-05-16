@@ -139,11 +139,15 @@ function addNewCity(event){
 
    event.preventDefault();
    let storeName =event.target.storeName.value;
-   let minNum = parseInt( event.target.minNum.value);
-   let maxNum = parseInt(event.target.maxNum.value);
-   let avgNum = parseInt(event.target.avgNum.value);
-   var x=document.forms["myForm"]["storeName"].value;
-   var regex=/^[a-zA-Z]+$/;
+   let minNum = event.target.minNum.value;
+   let maxNum = event.target.maxNum.value;
+   let avgNum = event.target.avgNum.value;
+   var SN=document.forms["myForm"]["storeName"].value;
+   var MIN=document.forms["myForm"]["minNum"].value;
+   var MAX=document.forms["myForm"]["maxNum"].value;
+   var AVG=document.forms["myForm"]["avgNum"].value;
+   var regex1=/^[a-zA-Z]+$/;
+   var regex2=/^[0-9]+$/;
    
    if (document.myForm.storeName.value == "" || document.myForm.minNum.value=="" || document.myForm.maxNum.value=="" ||
    document.myForm.avgNum.value==""  ) {
@@ -152,12 +156,16 @@ function addNewCity(event){
    else  if (minNum>=maxNum){
       alert('please min number is larger than max number or you enter text try again')
 
-   } else if (!x.match(regex))
+   }
+    else if (!SN.match(regex1))
    {
        alert("Must Store name be string");
-       return false;
+     
    }
-   
+   else if(!MIN.match(regex2) || !MAX.match(regex2)|| !AVG.match(regex2))
+      {
+         alert("Must Store name be number");
+      }
    else{
    let newCity= new Sales(storeName, minNum, maxNum, avgNum);
    newCity.getHourWorks();
