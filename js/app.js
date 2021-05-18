@@ -5,9 +5,9 @@ let checksum=[];
 
 function Sales(storename, min, max, avg) {
       this.storename = storename;
-      this.min = min;
-      this.max = max;
-      this.avg = avg;
+      this.min = parseInt(min) ;
+      this.max = parseInt(max) ;
+      this.avg = parseInt(avg) ;
       this.minMaxRandom = [];
       this.total=0;
       this.avgRandom = [];
@@ -139,21 +139,21 @@ function addNewCity(event){
 
    event.preventDefault();
    let storeName =event.target.storeName.value;
-   let minNum = event.target.minNum.value;
-   let maxNum = event.target.maxNum.value;
-   let avgNum = event.target.avgNum.value;
+   let minNum = parseInt(event.target.minNum.value) ;
+   let maxNum = parseInt(event.target.maxNum.value) ;
+   let avgNum = parseInt(event.target.avgNum.value) ;
    var SN=document.forms["myForm"]["storeName"].value;
    var MIN=document.forms["myForm"]["minNum"].value;
    var MAX=document.forms["myForm"]["maxNum"].value;
    var AVG=document.forms["myForm"]["avgNum"].value;
    var regex1=/^[a-zA-Z]+$/;
-   var regex2=/^[0-9]+$/;
+   var regex2=/^[0.0-9.0]+$/;
    
    if (document.myForm.storeName.value == "" || document.myForm.minNum.value=="" || document.myForm.maxNum.value=="" ||
    document.myForm.avgNum.value==""  ) {
       alert("There is some input is empty try again ");
    }
-   else  if (minNum>=maxNum){
+   else  if (minNum>maxNum){
       alert('please min number is larger than max number or you enter text try again')
 
    }
@@ -164,7 +164,7 @@ function addNewCity(event){
    }
    else if(!MIN.match(regex2) || !MAX.match(regex2)|| !AVG.match(regex2))
       {
-         alert("Must Store name be number");
+         alert("Must minmum , maxmum , avarge  be number");
       }
    else{
    let newCity= new Sales(storeName, minNum, maxNum, avgNum);
